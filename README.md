@@ -13,6 +13,6 @@ Prover um ambiente de serviço Web com uma interface gráfica de gerenciamento d
 O própio samba é uma ótima ferramenta para compartilhamento de arquivos, 
 mas toda a sua configuração é feita de forma manual na edição de arquivos, 
 sendo assim percebe-se a necessidade de um sistema mais dinâmico e versátil
-e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com interface gráfica para gerenciamento do sistama.
+e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com interface gráfica para gerenciamento do sistema.
 
 ## Protótipos:
