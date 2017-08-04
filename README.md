@@ -17,8 +17,8 @@ e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com 
 
 ### 
 
-![Banner da disciplina](img/samba-adicinar-usuario.jpg)
+![imagem samba](img/samba-adicinar-usuario.jpg)
 
-![Banner2 da disciplina] (img/samba-conf.jpg)
+![imagem2 samba](img/samba-conf.jpg)
 
 ## Protótipos:
