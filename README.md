@@ -6,7 +6,7 @@ A aplicação será um ambiente de gerenciamento de um servidor de compartilhame
 
 ## Objetivo:
 
-Prover um ambiente de serviço Web com uma interface gráfica de gerenciamento do serviço Samba de forma agrádevel, flexível e dinâmica para o compartilhamento de arquivos, definindo grupos, usuários e suas permissões.
+Prover um ambiente de serviço Web com uma interface gráfica de gerenciamento do serviço Samba de forma agrádevel, flexível e dinâmica para o compartilhamento de arquivos, definindo grupos, usuários e suas permissões, e as cotas de disco para cada pasta.
 
 ## Inspiração:
 
