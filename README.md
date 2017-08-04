@@ -19,6 +19,6 @@ e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com 
 
 ![imagem samba](img/samba-adicinar-usuario.jpg)
 
-![imagem2 samba](img/samba-conf.jpg)
+![imagem2 samba](img/samba-config.jpg)
 
 ## Protótipos:
