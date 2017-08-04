@@ -15,4 +15,10 @@ mas toda a sua configuração é feita de forma manual na edição de arquivos,
 sendo assim percebe-se a necessidade de um sistema mais dinâmico e versátil
 e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com interface gráfica para gerenciamento do sistema.
 
+### 
+
+![Banner da disciplina](img/samba-adicinar-usuario.jpg)
+
+![Banner2 da disciplina] (img/samba-conf.jpg)
+
 ## Protótipos:
