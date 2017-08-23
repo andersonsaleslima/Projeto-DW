@@ -1,5 +1,10 @@
 # MS - Manager samba
 
+## Equipe
+
+Anderson sales Lima;
+Fabiano S. Ferreira;
+
 ## Descrição:
 
 A aplicação será um ambiente de gerenciamento de um servidor de compartilhamento de arquivos através do sistema SAMBA, utilizada nas distribuições Linux como um servidor smb para sistemas Windows. 
