@@ -2,7 +2,7 @@
 
 ## Equipe
 
-Anderson sales Lima\n
+Anderson sales Lima;#
 Fabiano S. Ferreira
 
 ## Descrição:
