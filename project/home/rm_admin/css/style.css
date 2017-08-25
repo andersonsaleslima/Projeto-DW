@@ -1,0 +1,59 @@
+body {
+  width: auto;
+  height: auto;
+  color: #797979;
+  background: #f2f2f2;
+  font-family: 'Ruda', sans-serif;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+/**título*/
+#title {
+  margin: 50px 0px 50px;
+}
+
+/** block */
+main {
+  width: 550px;
+  height: auto;
+  margin: auto;
+  padding: 0px ;
+  display:  inline-block;
+}
+
+main fieldset{
+  width: auto
+  height: auto;
+  margin: 0px;
+  padding: 0px 10px 0px;
+  padding-top: 10px;
+  vertical-align: center;
+}
+
+.adjust {
+  margin-bottom: 10px;  
+}
+
+main fieldset form div{
+  height: 20px;
+}
+
+main fieldset form div label{
+  display: inline-block;
+  padding: 4px 0;
+}
+
+main fieldset form div input {
+  float: right;
+  width: 70%;
+  height: auto;
+  vertical-align: center;
+}

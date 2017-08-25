@@ -1,0 +1,253 @@
+body {
+  width: auto;
+  height: auto;
+  color: #797979;
+  background: #f2f2f2;
+  font-family: 'Ruda', sans-serif;
+  padding: 0px !important;
+  margin: 0px !important;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+/**título*/
+#title {
+  margin: 50px 0px 50px;
+
+}
+
+/** block */
+main {
+  width: 1100px;
+  height: auto;
+  margin: auto;
+  padding: 0px ;
+  display:  inline-block;
+  text-align: left;
+}
+
+main section{
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  display: inline-block;
+  min-height: 300px;
+  vertical-align: top;
+}
+
+/*** menu *********/
+#menu {
+  width: 25%;
+  margin: 0px;
+  border: solid 1px;
+  vertical-align: center;
+  float: left;
+}
+
+#menu h2{
+  text-align: center;
+}
+
+
+main section ul li{
+  margin: 10px;
+  font-size: 15px;
+}
+
+
+/**list****************/
+#list {
+  vertical-align: top;
+  width: 74%;
+  border: solid 1px;
+  float: right;
+} 
+
+#list table{
+  width: 100%;
+}
+
+ main section table tr td{
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+ }
+
+ main section table tr td:nth-child(4){
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+ }
+
+
+/* header 
+/header.black-bg {
+  background: #ffd777;
+  border-bottom: 1px solid #c9aa5f;
+  padding: 18px;
+}
+
+header .header-menu, header .header-menu-right a {
+  display: inline-block;
+  text-decoration: none;
+  color: #797979;
+}
+header i {
+  vertical-align: middle;
+}
+header .header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 25px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+header .header-menu-right {
+  float: right;
+  margin-right: 20px;
+  vertical-align: top;
+}
+header .header-menu-right a {
+  vertical-align: middle;
+}
+
+header .header-menu-right i {
+  font-size: 28px;
+}
+
+header img.user {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 10px;
+  padding: auto;
+}
+
+/* main inicio
+
+body>main{
+  width: 990px;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+/**formulario inicio
+main>form {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 80px;
+  height: auto;
+}
+
+main>form>*{
+  width: auto;
+  height: 30px;
+  margin: auto;
+  padding: auto;
+  display: inline;
+  border: none;
+  vertical-align: middle;
+}
+
+main>form>input{
+  color: #797979;
+  font-size: 2em;
+  width: 70%;
+  margin-right: 15px;
+  padding-left: 15px;
+  outline: none;
+}
+
+main>form>button{
+  background-color: #797979;
+  color: #fff;
+}
+
+/**formulario fim
+
+/**container inicio
+
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: auto;
+}
+
+.container>section{
+  display: inline-block;
+  width: 25%;
+  height: 260px;
+  margin: 0px 30px;
+  margin-bottom: 50px;
+  padding: auto;
+  vertical-align: top;
+  text-align: center;
+  background-color: #fff;
+  color: #797979;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.2);
+}
+
+.container>section>header{
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #797979;
+  color: #fff;
+}
+
+.container>section>main{
+  margin: auto;
+  margin-top: 20px;
+}
+
+.container>section>main>i{
+  width: auto;
+  height: auto;
+  margin: auto;
+  padding: auto;
+  font-size: 80px;
+  vertical-align: top;
+}
+
+.container>section>main div{
+  font-size: 30px;
+}
+
+.container>section>main .text-icon{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container>section>main table{
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 15px;
+  padding: auto;
+  border-collapse: collapse;
+}
+
+.container>section>main>table td, th{
+  width: 40%;
+  height: auto;
+  margin: auto;
+  padding: auto;
+  border-bottom: 1px solid #797979;
+}
+
+/**container fim*/
+/**main fim*/
