@@ -2,8 +2,9 @@
 
 ## Equipe
 
-Anderson sales Lima; 
-Fabiano S. Ferreira;
+Anderson sales Lima;  
+Fabiano S. Ferreira; 
+André Régis;
 
 ## Descrição:
 
@@ -37,4 +38,6 @@ e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com 
 
 ![img login](img/rm_user.png)
 
-![img login](img/Add administratos.png)
+
+
+![img login](img/Add administrator.png)
