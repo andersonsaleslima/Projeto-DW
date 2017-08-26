@@ -27,3 +27,14 @@ e intuitivo. Algumas plataformas como webmin são um exemplo de aplicação com 
 ![imagem2 samba](img/samba-config.jpg)
 
 ## Protótipos:
+![img login](img/login.png)
+
+![img login](img/home.png)
+
+![img login](img/setting.png)
+
+![img login](img/add_user.png)
+
+![img login](img/rm_user.png)
+
+![img login](img/Add administratos.png)
