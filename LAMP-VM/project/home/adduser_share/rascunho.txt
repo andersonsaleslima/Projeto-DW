@@ -1,0 +1,20 @@
+
+.adjust {
+  margin-bottom: 10px;  
+}
+
+main fieldset form div{
+  height: 20px;
+}
+
+main fieldset form div label{
+  display: inline-block;
+  padding: 4px 0;
+}
+
+main fieldset form div input {
+  float: right;
+  width: 50%;
+  height: auto;
+  vertical-align: center;
+}
