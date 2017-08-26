@@ -22,7 +22,7 @@ function check_parameter(){
 
 	if (( $nparameter !=  3))
 	then
-		echo "ERRO - comando incompleto"
+		echo "Error of parameter"
 		exit
 	fi
 }
@@ -38,11 +38,12 @@ function check_existence(){
 
 function check_directory(){
 
-	ls -Rl /publico | grep -E "^d" | grep -E "\b$folder\b" #> /dev/null
+	ls -Rl /publico | grep -E "^d" | grep -E "\b$folder\b" &> /dev/null
 	if (( $? == 1 ))
 	then
-		sudo mkdir /publico/$folder
-		sudo chmod -R 777 /publico
+		sudo mkdir /publico &> /dev/null
+		sudo mkdir /publico/$folder &> /dev/null
+		sudo chmod -R 777 /publico &> /dev/null
 	fi
 }
 
@@ -50,7 +51,7 @@ function check_permission(){
 
 	if [ $permission != "r" ] && [ $permission != "w" ]
 	then
-		echo "ERRO - permissão incorreta"
+		echo "Error - permission incorrect"
 		exit
 	else
 		case $permission in
@@ -62,7 +63,6 @@ function check_permission(){
 				write="yes"
 				;;
 		esac
-		echo $write
 	fi
 }
 
@@ -79,7 +79,6 @@ function setting(){
 		sudo echo "valid users = " >> /etc/samba/smb.conf
 	else
 		line_init=$(grep -nE "\[\b$name_of_share\b\]" /etc/samba/smb.conf | cut -f1 -d:)
-		echo $init
 		number_init=$(grep -nE "\[.*\]" /etc/samba/smb.conf | cut -f1 -d: | grep -n "\b$line_init\b" | cut -f1 -d: )
 		number_next=$(($number_init+1))
 		line_end=$(grep -nE "\[.*]" /etc/samba/smb.conf | cut -f1 -d: | grep -nv "\b$line_init\b" | grep "\b$number_next\b" | cut -f2 -d: )
@@ -103,3 +102,4 @@ check_existence
 check_directory
 check_permission
 setting
+echo "OK"

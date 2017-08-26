@@ -1,11 +1,10 @@
 #!/bin/bash
 
 nparameter=$#
-name_of_share=$1
-user=$2
+user=$1
 
 function check_parameter(){
-	if (( $nparameter !=2 ))
+	if (( $nparameter != 1 ))
 	then
 		echo "Error of parameter"
 		exit
@@ -13,53 +12,30 @@ function check_parameter(){
 	fi
 }
 
-function check_existence(){
-	grep -E "[ ]*\[\b$name_of_share\b\]" /etc/samba/smb.conf &> /dev/null
+
+function rm_user(){
+
+	pdbedit -L | grep -E "\b$user\b" > /dev/null
+	if (( $? == 1))
+	then
+		echo "Error - User not Found"
+		exit
+	fi
+
+	cat /etc/passwd | cut -f1 -d: | grep -E "$user" >/dev/null
 	if (( $? == 1 ))
 	then
-		echo "Error - Sharing not found"
-#		?=1
-		exit
+		useradd -m $user &> /dev/null
 	fi
-}
 
-function check_user(){
-	if pdbedit -L | grep -E "$user" &> /dev/null
-	then
-		echo "Error - User not found"
-		exit
-	fi
 }
 
 
 function rm_user(){
-	line_init=$(grep -nE "^[ ]*\[\b$name_of_share\b\]" /etc/samba/smb.conf | cut -f1 -d:)
-	number_init=$(grep -nE "^[ ]*\[.*\]" /etc/samba/smb.conf | cut -f1 -d: | grep -n "^\b$line_init\b" | cut -f1 -d: )
-	number_next=$(($number_init+1))
-	line_end=$(grep -nE "^[ ]*\[.*\]" /etc/samba/smb.conf | cut -f1 -d: | grep -nv "^\b$line_init\b" | grep "^\b$number_next\b" | cut -f2 -d: )
-	line_end=$(($line_end-1))
-	if (( $line_end <= 0 ))
-	then
-		line_end=$(wc -l /etc/samba/smb.conf | cut -f1 -d' ')
-	fi
-
-	sed -n "$line_init,$line_end p" /etc/samba/smb.conf | grep -n "^[ ]*valid users" &> /dev/null
-	if (( $? == 1 ))
-	then
-		sed -i "$line_end a valid users = $user" /etc/samba/smb.conf > /dev/null
-	else
-		nline_of_user=$(sed -n "$line_init,$line_end p" /etc/samba/smb.conf | grep -n "^[ ]*valid users" | cut -f1 -d:)
-		nline_of_user=$(($line_init + $nline_of_user - 1 ))
-		line_of_user=$(sed -n "$nline_of_user p" /etc/samba/smb.conf)
-		line_of_user="$line_of_user $user"
-		line_end=$(($line_end-1))
-		sed -i "$nline_of_user d" /etc/samba/smb.conf
-		sed -i "$line_end a $line_of_user" /etc/samba/smb.conf
-	fi
-
+	smbpasswd -x $user &> /dev/null
 }
 
 check_parameter
-check_existence
 check_user
-set_user
+rm_user
+echo "OK"

@@ -6,7 +6,7 @@ body {
   font-family: 'Ruda', sans-serif;
   padding: 0px !important;
   margin: 0px !important;
-  font-size: 13px;
+  font-size: 20px;
   margin: 0;
   text-align: center;
 }
@@ -36,7 +36,7 @@ main section{
   padding: 0px;
   border: 0px;
   display: inline-block;
-  min-height: 300px;
+  min-height: 350px;
   vertical-align: top;
 }
 
@@ -72,16 +72,39 @@ main section ul li{
   width: 100%;
 }
 
+#list table thead{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+main section table tr th{
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+    /*margin: 0px 2px;*/
+    padding: 5px 5px;
+ }
+
+main section table tr th:nth-child(4){
+    display: inline-block;
+    width: 22%;
+    text-align: center;
+    padding: 5px 5px;
+ }
+
  main section table tr td{
     display: inline-block;
-    width: 25%;
+    width: 23%;
     text-align: center;
+    /*margin: 0px 2px;*/
+    padding: 5px 5px;
  }
 
  main section table tr td:nth-child(4){
     display: inline-block;
-    width: 24%;
+    width: 22%;
     text-align: center;
+    padding: 5px 5px;
  }
 
 

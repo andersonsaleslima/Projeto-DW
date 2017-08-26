@@ -23,14 +23,6 @@ function check_existence(){
 	fi
 }
 
-function check_user(){
-	if pdbedit -L | grep -E "$user" &> /dev/null
-	then
-		echo "Error - User not found"
-		exit
-	fi
-}
-
 
 function rm_user(){
 	line_init=$(grep -nE "^[ ]*\[\b$name_of_share\b\]" /etc/samba/smb.conf | cut -f1 -d:)
@@ -46,20 +38,20 @@ function rm_user(){
 	sed -n "$line_init,$line_end p" /etc/samba/smb.conf | grep -n "^[ ]*valid users" &> /dev/null
 	if (( $? == 1 ))
 	then
-		sed -i "$line_end a valid users = $user" /etc/samba/smb.conf > /dev/null
-	else
-		nline_of_user=$(sed -n "$line_init,$line_end p" /etc/samba/smb.conf | grep -n "^[ ]*valid users" | cut -f1 -d:)
-		nline_of_user=$(($line_init + $nline_of_user - 1 ))
-		line_of_user=$(sed -n "$nline_of_user p" /etc/samba/smb.conf)
-		line_of_user="$line_of_user $user"
-		line_end=$(($line_end-1))
-		sed -i "$nline_of_user d" /etc/samba/smb.conf
-		sed -i "$line_end a $line_of_user" /etc/samba/smb.conf
+		sed -i "$line_end a valid users = $user" /etc/samba/smb.conf &> /dev/null
 	fi
+	nline_of_user=$(sed -n "$line_init,$line_end p" /etc/samba/smb.conf | grep -n "^[ ]*valid users" | cut -f1 -d:)
+	nline_of_user=$(($line_init + $nline_of_user - 1 ))
+	line_of_user=$(sed -n "$nline_of_user p" /etc/samba/smb.conf)
+	line_of_user=$(echo $line_of_user | sed -E "s/\b$user\b//g" )
+	line_end=$(($line_end-1))
+	sed -i "$nline_of_user d" /etc/samba/smb.conf
+	sed -i "$line_end a $line_of_user" /etc/samba/smb.conf
+	
 
 }
 
 check_parameter
 check_existence
-check_user
-set_user
+rm_user
+echo "OK"

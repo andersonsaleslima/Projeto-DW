@@ -27,18 +27,17 @@ function check_existence(){
 function check_user(){
 
 	cat /etc/passwd | cut -f1 -d: | grep -E "$user" >/dev/null
-	if (( #? == 1 ))
+	if (( $? == 1 ))
 	then
-		crypted=$(echo $password | mkpasswd -s -H md5)
-		useradd -m $1 -p $crypted
+		echo "Error - User not Found"
+		exit
 	fi
+
 	pdbedit -L | grep -E "\b$user\b" > /dev/null
 	if (( $? == 1))
 	then
-		smbpasswd -a $user -s << FIM
-$password
-$password
-FIM
+		echo "Error - User not Found"
+		exit
 	fi
 
 }

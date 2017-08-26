@@ -1,11 +1,18 @@
-
-const button = document.querySelector('#button')
+const button = document.querySelector('button')
+const result = document.querySelector('#result')
 
 button.addEventListener('click', function() {
   const login = document.querySelector('#login')
   const password = document.querySelector('#password')
-  
-//  ipTbody.innerHTML += `<tr><td>${values.join('</td><td>')}</td><td><button class = "delete" >X</button></td></tr>`
-  let address = {ip: values[0], mask: values[1], version: values[2]}
-  iptables.addAddress(address)
+
+  let url = `../add_user.php?name_of_user=${login.value}&password=${password.value}`;
+
+  console.log(url)
+
+  fetch(url)
+      .then(res => res.json())
+        .then(info => {
+        	this.result.innerHTML = info.status
+        	console.log(info)
+        })
 })
